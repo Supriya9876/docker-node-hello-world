@@ -1,5 +1,6 @@
-FROM node:4.2
-COPY . /src
-RUN cd /src && npm install
+FROM node:slim
+WORKDIR /app
+COPY . /app
+RUN cd /app && npm install
 EXPOSE 4000
-CMD ["node", "/src/server.js"]
+CMD ["node", "/app/server.js"]
